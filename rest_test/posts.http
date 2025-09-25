@@ -1,0 +1,10 @@
+GET http://127.0.0.1:8000/api/posts/ HTTP/1.1
+Content-Type: application/json
+
+###
+POST http://127.0.0.1:8000/api/posts/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "content": "Otro comentario desde REST Client 2"
+}
