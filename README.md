@@ -1,5 +1,25 @@
 # Microblog API
 
+Una aplicación simple de microblog construida con Django y Django REST Framework.
+
+## Requisitos previos
+
+- Python 3.8 o superior
+- Git
+- PostgreSQL 12 o superior
+
+## Configuración de la base de datos
+
+1. Crea el esquema en PostgreSQL:
+   ```sql
+   CREATE SCHEMA IF NOT EXISTS api_microblog_db;
+   ```
+
+2. Asegúrate de que el usuario tenga permisos en el esquema:
+   ```sql
+   GRANT ALL PRIVILEGES ON SCHEMA api_microblog_db TO postgres;
+   ```
+
 ## Instalación
 
 1. Clona el repositorio:
