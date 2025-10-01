@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'mongoengine',
     'api_microblog',
 ]
 
@@ -74,12 +75,21 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Configuración tradicional de Django (necesaria para Auth y Admin)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Configuración de MongoDB con MongoEngine
+import mongoengine
+mongoengine.connect(
+    db='api_microblog_db',
+    host='mongodb://root:masterdba@localhost:27017',
+    authentication_source='admin'
+)
 
 
 # Password validation

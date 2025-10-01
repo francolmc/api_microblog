@@ -1,9 +1,15 @@
-from django.db import models
+from mongoengine import Document, StringField, DateTimeField
+from datetime import datetime
 
 # Create your models here.
-class Post(models.Model):
-    content = models.TextField(max_length=150)
-    created_at = models.DateTimeField(auto_now_add=True)
+class Post(Document):
+    content = StringField(max_length=150, required=True)
+    created_at = DateTimeField(default=datetime.utcnow)
 
     def __str__(self):
         return self.content[:50]
+    
+    meta = {
+        'collection': 'posts',
+        'ordering': ['-created_at']
+    }

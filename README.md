@@ -1,5 +1,30 @@
 # Microblog API
 
+Una aplicación simple de microblog construida con Django, Django REST Framework y MongoDB usando Djongo.
+
+## Requisitos previos
+
+- Python 3.8 o superior
+- Git
+- MongoDB 4.4 o superior
+
+## Configuración de la base de datos
+
+1. Instala y ejecuta MongoDB localmente en el puerto 27017
+
+2. Crea un usuario administrador (opcional pero recomendado):
+   ```javascript
+   // En MongoDB shell
+   use admin
+   db.createUser({
+     user: "root",
+     pwd: "masterdba",
+     roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"]
+   })
+   ```
+
+3. La base de datos `api_microblog_db` se creará automáticamente al ejecutar las migraciones
+
 ## Instalación
 
 1. Clona el repositorio:
